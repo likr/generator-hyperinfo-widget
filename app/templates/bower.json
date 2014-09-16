@@ -1,0 +1,11 @@
+{
+  "name": "<%= widgetName %>",
+  "version": "0.0.0",
+  "dependencies": {},
+  "exportsOverride": {
+    "*": {
+      "js": "**/*.js",
+      "css": "**/*.css"
+    }
+  }
+}

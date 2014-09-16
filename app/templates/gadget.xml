@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WidgetManifesto>
+  <name><%= widgetName %></name>
+  <version>0.0.0</version>
+  <size>
+    <Width><%= width %></Width>
+    <Height><%= height %></Height>
+  </size>
+  <position>
+    <X><%= x %></X>
+    <Y><%= y %></Y>
+  </position>
+</WidgetManifesto>
