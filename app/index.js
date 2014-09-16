@@ -34,6 +34,15 @@ var HyperinfoWidgetGenerator = yeoman.generators.Base.extend({
         default: 'JavaScript'
       },
       {
+        type: 'checkbox',
+        name: 'libs',
+        message: 'Libraries',
+        choices: [
+          'AngularJS',
+          'D3.js'
+        ]
+      },
+      {
         type: 'input',
         name: 'width',
         message: 'Widget width',
@@ -61,6 +70,7 @@ var HyperinfoWidgetGenerator = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.widgetName = props.widgetName;
+      this.libs = props.libs;
       this.width = props.width;
       this.height = props.height;
       this.x = props.x;
@@ -89,7 +99,11 @@ var HyperinfoWidgetGenerator = yeoman.generators.Base.extend({
   },
 
   end: function () {
-    this.installDependencies();
+    this.installDependencies({
+      callback: function () {
+        this.spawnCommand('grunt', ['bower']);
+      }.bind(this)
+    });
   }
 });
 
